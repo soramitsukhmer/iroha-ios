@@ -24,14 +24,14 @@ PODS:
   - gRPC/Main (1.11.0):
     - gRPC-Core (= 1.11.0)
     - gRPC-RxLibrary (= 1.11.0)
-  - IrohaCommunication (4.0.0):
-    - BoringSSL (= 10.0.3)
-    - gRPC-ProtoRPC (= 1.11.0)
-    - IrohaCrypto/Iroha (~> 0.3.0)
-    - nanopb (= 0.3.8)
+  - IrohaCommunication (4.0.1):
+    - BoringSSL (~> 10.0.3)
+    - gRPC-ProtoRPC (~> 1.11.0)
+    - IrohaCrypto/Iroha (~> 0.9.1)
+    - nanopb (~> 0.3.8)
     - Protobuf (~> 3.5.0)
-  - IrohaCrypto/Common (0.3.0)
-  - IrohaCrypto/Iroha (0.3.0):
+  - IrohaCrypto/Common (0.9.1)
+  - IrohaCrypto/Iroha (0.9.1):
     - IrohaCrypto/Common
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -42,6 +42,7 @@ PODS:
 
 DEPENDENCIES:
   - IrohaCommunication (from `../`)
+  - IrohaCrypto/Iroha (from `https://github.com/soramitsukhmer/ios-crypto.git`, branch `feature/iroha_arm64_simulator`)
 
 SPEC REPOS:
   trunk:
@@ -50,13 +51,20 @@ SPEC REPOS:
     - gRPC-Core
     - gRPC-ProtoRPC
     - gRPC-RxLibrary
-    - IrohaCrypto
     - nanopb
     - Protobuf
 
 EXTERNAL SOURCES:
   IrohaCommunication:
     :path: "../"
+  IrohaCrypto:
+    :branch: feature/iroha_arm64_simulator
+    :git: https://github.com/soramitsukhmer/ios-crypto.git
+
+CHECKOUT OPTIONS:
+  IrohaCrypto:
+    :commit: 7fc5255aa43f912069fc78cae68a28afa0647970
+    :git: https://github.com/soramitsukhmer/ios-crypto.git
 
 SPEC CHECKSUMS:
   BoringSSL: c46efb47593135382bc0934196f16d2f726f5f36
@@ -64,11 +72,11 @@ SPEC CHECKSUMS:
   gRPC-Core: 164639cd8ae18ca8b65477fafb2efbaecf4f181a
   gRPC-ProtoRPC: bb5fddf3424aa4fad74d76736578a79fe40e244e
   gRPC-RxLibrary: 26d53d1b1f306befd4ad4e15bd6de27839a82481
-  IrohaCommunication: e53d340e9e787d920612248c34fbe4e4e5444fe8
-  IrohaCrypto: 5d518bd6fcde6d90be5e3f4d077d6cadb6e43fad
+  IrohaCommunication: ad2d775db62d2a472ca6ac091a5ff05c18809ed9
+  IrohaCrypto: 21292f1053d1ba25b724309147252d1e9d27bf0d
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
 
-PODFILE CHECKSUM: 29089a97c3781ec366ef8266addf4289525ff849
+PODFILE CHECKSUM: 3e32f1b0b9b71d560937268b8195c9497a7768b7
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.16.2
